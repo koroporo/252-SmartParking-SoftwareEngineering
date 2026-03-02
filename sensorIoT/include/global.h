@@ -24,5 +24,6 @@ struct ParkingSlot {
 
 extern ParkingSlot slots[NUM_SLOT];
 extern SemaphoreHandle_t xSensor;
+extern bool isWiFiconnected;
 
 #endif

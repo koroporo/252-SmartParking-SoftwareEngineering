@@ -8,10 +8,24 @@ void lcd_display(void *pvParameter)
     lcd.init();
     lcd.backlight();
 
-    lcd.setCursor(0, 0);
-    lcd.printf("  --PARKING SLOT--  ");
     while (1)
     {
+        if (!isWiFiconnected)
+        {
+            lcd.setCursor(0, 0);
+            lcd.printf("WiFi is connecting  ");
+            lcd.setCursor(0, 1);
+            lcd.printf("                    ");
+            lcd.setCursor(0, 2);
+            lcd.printf("                    ");
+            lcd.setCursor(0, 3);
+            lcd.printf("                    ");
+            vTaskDelay(pdMS_TO_TICKS(500));
+            continue;
+        }
+
+        lcd.setCursor(0, 0);
+        lcd.printf("  --PARKING SLOT--  ");
         for (int i = 0; i < NUM_SLOT; i++)
         {
             float current_distance;

@@ -6,3 +6,4 @@ ParkingSlot slots[NUM_SLOT] = {
     {3, 12, 13, -1, false, 0, false} // Slot_3: Trig_12, Echo_13
 };
 SemaphoreHandle_t xSensor;
+bool isWiFiconnected = false;
