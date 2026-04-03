@@ -1,0 +1,162 @@
+:root {
+    --primary-blue: #1B4069;
+    --primary-green: #00D166;
+    --primary-purple: #B240A2;
+    --chart-car: #00B5E2;
+    --chart-moto: #2ECC71;
+    --dark-bg: #404040;
+}
+
+/* KPI Cards Style từ ảnh 2 */
+.dark-card {
+    background: var(--dark-bg) !important;
+    color: white;
+}
+.dark-card p { color: #ccc !important; }
+.kpi-icon-box {
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Biểu đồ xe cộ (Grouped Bar) */
+.chart-container-wrapper {
+    display: flex;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    color: #888;
+    font-size: 12px;
+    width: 30px;
+}
+
+.bar-chart-complex {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.chart-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12%;
+}
+
+.bar-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 250px;
+    width: 100%;
+    justify-content: center;
+}
+
+.bar {
+    width: 12px;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+}
+
+.bar::after {
+    content: attr(data-val);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #666;
+}
+
+.bar-c { background: var(--chart-car); }
+.bar-m { background: var(--chart-moto); }
+
+/* User Segmentation (Horizontal Bars) */
+.horizontal-bars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.h-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.month-label { width: 40px; font-size: 12px; color: #666; }
+
+.h-bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.h-bar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.h-bar {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.h-bar-wrapper span { font-size: 10px; color: #888; }
+
+.student-bg { background: #9B59B6; }
+.guest-bg { background: #E91E63; }
+.lecturer-bg { background: #27AE60; }
+
+/* Pie Charts - Giả lập 3 phần */
+.pie-container {
+    padding: 20px;
+}
+
+.pie-chart-real {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    /* Sử dụng conic-gradient để tạo các lát cắt */
+    background: conic-gradient(
+        var(--primary-blue) 0% 45.9%, 
+        var(--primary-green) 45.9% 70.8%, 
+        var(--primary-purple) 70.8% 100%
+    );
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.label-p {
+    position: absolute;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    pointer-events: none;
+}
+
+.p-available { top: 30%; right: 15%; }
+.p-occupied { bottom: 15%; left: 25%; }
+.p-reserved { top: 25%; left: 15%; }
+
+/* Legend colors */
+.dot.car { background: var(--chart-car); }
+.dot.moto { background: var(--chart-moto); }
+.dot.student { background: #9B59B6; }
+.dot.guest { background: #E91E63; }
+.dot.lecturer { background: #27AE60; }

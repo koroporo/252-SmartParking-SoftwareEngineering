@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Places - HCMUT System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="parking-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR (Nhất quán) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://hcmut.edu.vn/img/logo.png" alt="BK Logo" class="logo-img">
+                <span>SYSTEM ADMIN</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="activity-report.html"><i class="fas fa-chart-line"></i> Activity Report</a></li>
+                    <li><a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="devices.html"><i class="fas fa-microchip"></i> Devices</a></li>
+                    <li><a href="credentials.html"><i class="fas fa-id-card"></i> Credentials</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-parking"></i> Parking Places</a></li>
+                    <li><a href="fee-policy.html"><i class="fas fa-file-invoice-dollar"></i> Fee Policy</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="page-title">
+                    <h2>Parking Places</h2>
+                    <p>Giám sát sơ đồ vị trí đỗ xe theo thời gian thực</p>
+                </div>
+                <div class="header-actions">
+                    <select class="select-modern">
+                        <option>Parking Lot A</option>
+                        <option>Parking Lot B</option>
+                        <option>Zone C (Lecturers)</option>
+                    </select>
+                    <button class="btn-primary"><i class="fas fa-print"></i> Export Map</button>
+                </div>
+            </header>
+
+            <section class="content">
+                <!-- TOP STATS (Screenshot 11) -->
+                <div class="parking-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fas fa-info-circle"></i></div>
+                        <div><h3>140</h3><p>Total Slots</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fas fa-check"></i></div>
+                        <div><h3>120</h3><p>Available</p></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fas fa-car"></i></div>
+                        <div><h3>18</h3><p>Occupied</p></div>
+                    </div>
+                    <div class="stat-card border-red">
+                        <div class="stat-icon red"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div><h3>2</h3><p>Sensor Errors</p></div>
+                    </div>
+                </div>
+
+                <div class="parking-grid">
+                    <!-- LEFT: INTERACTIVE FLOOR PLAN -->
+                    <div class="card floor-plan-box">
+                        <div class="card-header">
+                            <h4><i class="fas fa-map"></i> Floor Plan: Zone A01 - A04</h4>
+                            <div class="map-legend">
+                                <span><i class="fas fa-circle text-success"></i> Empty</span>
+                                <span><i class="fas fa-circle text-primary"></i> Occupied</span>
+                                <span><i class="fas fa-circle text-danger"></i> Error</span>
+                            </div>
+                        </div>
+                        <div class="floor-plan-visual">
+                            <!-- Giả lập sơ đồ bãi đỗ -->
+                            <div class="parking-aisle">
+                                <div class="slot-item occupied" data-id="A01">A01</div>
+                                <div class="slot-item occupied" data-id="A02">A02</div>
+                                <div class="slot-item empty" data-id="A03">A03</div>
+                                <div class="slot-item occupied error" data-id="A04">A04</div>
+                                <div class="slot-item empty" data-id="A05">A05</div>
+                                <div class="slot-item empty" data-id="A06">A06</div>
+                            </div>
+                            <div class="roadway">Main Roadway</div>
+                            <div class="parking-aisle">
+                                <div class="slot-item empty">B01</div>
+                                <div class="slot-item occupied">B02</div>
+                                <div class="slot-item empty">B03</div>
+                                <div class="slot-item empty">B04</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: DETAILED STATE TABLE -->
+                    <div class="card table-container">
+                        <div class="card-header">
+                            <h4>State of slots</h4>
+                            <div class="search-box-sm">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Filter by Slot ID...">
+                            </div>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sensor ID</th>
+                                    <th>Position</th>
+                                    <th>State</th>
+                                    <th>Health</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SNS-A01</td>
+                                    <td><strong>A01</strong></td>
+                                    <td><span class="badge-pill occupied">Occupied</span></td>
+                                    <td><span class="status-indicator error">Error</span></td>
+                                </tr>
+                                <tr>
+                                    <td>SNS-A02</td>
+                                    <td><strong>A02</strong></td>
+                                    <td><span class="badge-pill occupied">Occupied</span></td>
+                                    <td><span class="status-indicator online">Online</span></td>
+                                </tr>
+                                <tr>
+                                    <td>SNS-A03</td>
+                                    <td><strong>A03</strong></td>
+                                    <td><span class="badge-pill empty">Empty</span></td>
+                                    <td><span class="status-indicator online">Online</span></td>
+                                </tr>
+                                <tr>
+                                    <td>SNS-A04</td>
+                                    <td><strong>A04</strong></td>
+                                    <td><span class="badge-pill occupied">Occupied</span></td>
+                                    <td><span class="status-indicator error">Error</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

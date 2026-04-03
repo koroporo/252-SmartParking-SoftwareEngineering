@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCMUT - System Administrator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome cho icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://hcmut.edu.vn/img/logo.png" alt="BK Logo" class="logo-img">
+                <span>SYSTEM ADMIN</span>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="activity-report.html"><i class="fas fa-chart-line"></i> Activity Report</a></li>
+                    <li><a href="notifications.html"><i class="fas fa-bell"></i> Notifications <span class="badge">6</span></a></li>
+                    <li><a href="devices.html"><i class="fas fa-microchip"></i> Devices</a></li>
+                    <li><a href="credentials.html"><i class="fas fa-id-card"></i> Credentials</a></li>
+                    <li><a href="parking-places.html"><i class="fas fa-parking"></i> Parking Places</a></li>
+                    <li><a href="fee-policy.html"><i class="fas fa-file-invoice-dollar"></i> Fee Policy</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search system data...">
+                </div>
+                <div class="user-info">
+                    <i class="fas fa-cog icon-btn"></i>
+                    <i class="fas fa-bell icon-btn"></i>
+                    <div class="profile">
+                        <span class="user-name">Nguyen Van A</span>
+                        <img src="https://ui-avatars.com/api/?name=Nguyen+Van+A&background=0D47A1&color=fff" alt="Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <section class="content">
+                <!-- TOP CARDS -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-data">
+                            <h3>6.000.000 VND</h3>
+                            <p>Daily Revenue</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon red"><i class="fas fa-exclamation-triangle"></i></div>
+                        <div class="stat-data">
+                            <h3>4</h3>
+                            <p>Disconnected Devices</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fas fa-car"></i></div>
+                        <div class="stat-data">
+                            <h3>2,345</h3>
+                            <p>Daily Traffic Volume</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- BIỂU ĐỒ DOANH THU (Dùng CSS placeholder cho Chart) -->
+                    <div class="chart-container card">
+                        <div class="card-header">
+                            <h4>Total Daily Revenue (Hourly)</h4>
+                            <select><option>Today</option></select>
+                        </div>
+                        <div class="bar-chart">
+                            <!-- Placeholder cho biểu đồ cột -->
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 10%"></div>
+                            <div class="bar" style="height: 80%"></div>
+                            <div class="bar" style="height: 30%"></div>
+                            <div class="bar" style="height: 15%"></div>
+                            <div class="bar" style="height: 90%"></div>
+                        </div>
+                    </div>
+
+                    <!-- TRẠNG THÁI BÃI ĐỖ -->
+                    <div class="parking-status card">
+                        <div class="card-header">
+                            <h4>Parking Availability</h4>
+                        </div>
+                        <ul class="parking-list">
+                            <li>
+                                <span>Gate C</span>
+                                <span class="status green">120 slots left</span>
+                            </li>
+                            <li>
+                                <span>Gate A</span>
+                                <span class="status orange">15 slots left</span>
+                            </li>
+                            <li>
+                                <span>Gate B</span>
+                                <span class="status red">Full</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- NOTIFICATION PREVIEW -->
+                <div class="table-container card">
+                    <div class="card-header">
+                        <h4>Manage Access Credentials</h4>
+                        <button class="btn-text">View All</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Content</th>
+                                <th>Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="label error">Critical</span></td>
+                                <td>Unusual login from IP: 112.16.89.2</td>
+                                <td>14:32</td>
+                                <td><button class="btn-sm">Details</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="label warning">Request</span></td>
+                                <td>Lecturer Tran Thi C requested access Zone B</td>
+                                <td>18:36</td>
+                                <td><button class="btn-sm primary">Approve</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Report - HCMUT System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="report-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://hcmut.edu.vn/img/logo.png" alt="BK Logo" class="logo-img">
+                <span>SYSTEM ADMIN</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-chart-line"></i> Activity Report</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="#"><i class="fas fa-microchip"></i> Devices</a></li>
+                    <li><a href="#"><i class="fas fa-id-card"></i> Credentials</a></li>
+                    <li><a href="#"><i class="fas fa-parking"></i> Parking Places</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="page-title">
+                    <h2>Activity Report</h2>
+                    <p>Theo dõi lưu lượng và hiệu suất hệ thống</p>
+                </div>
+                <div class="header-actions">
+                    <div class="date-filter">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Sep 01, 2024 - Sep 30, 2024</span>
+                    </div>
+                    <button class="btn-primary"><i class="fas fa-download"></i> Export PDF</button>
+                </div>
+            </header>
+
+            <section class="content">
+                <!-- KPI CARDS -->
+                <div class="kpi-grid">
+                    <div class="kpi-card dark-card">
+                        <div class="kpi-info">
+                            <p>Views</p>
+                            <h3>7,265</h3>
+                            <span class="trend up"><i class="fas fa-caret-up"></i> +11.01%</span>
+                        </div>
+                        <div class="kpi-icon-box"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="kpi-card dark-card">
+                        <div class="kpi-info">
+                            <p>Visits</p>
+                            <h3>3,671</h3>
+                            <span class="trend down"><i class="fas fa-caret-down"></i> -0.03%</span>
+                        </div>
+                        <div class="kpi-icon-box"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="kpi-card dark-card">
+                        <div class="kpi-info">
+                            <p>New Users</p>
+                            <h3>256</h3>
+                            <span class="trend up"><i class="fas fa-caret-up"></i> +15.03%</span>
+                        </div>
+                        <div class="kpi-icon-box"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                    <div class="kpi-card dark-card">
+                        <div class="kpi-info">
+                            <p>Active Users</p>
+                            <h3>2,318</h3>
+                            <span class="trend up"><i class="fas fa-caret-up"></i> +6.08%</span>
+                        </div>
+                        <div class="kpi-icon-box"><i class="fas fa-chart-line"></i></div>
+                    </div>
+                </div>
+
+                <div class="report-main-grid">
+                    <!-- Biểu đồ cột: Vehicle Traffic -->
+                    <div class="card chart-box">
+                        <div class="card-header">
+                            <h4>Vehicle Traffic by Day</h4>
+                            <div class="legend">
+                                <span class="dot car"></span> Car
+                                <span class="dot moto"></span> Motorcycle
+                            </div>
+                        </div>
+                        <div class="chart-container-wrapper">
+                            <div class="y-axis">
+                                <span>200</span><span>150</span><span>100</span><span>50</span><span>0</span>
+                            </div>
+                            <div class="bar-chart-complex">
+                                <div class="chart-column">
+                                    <div class="bar-group">
+                                        <div class="bar bar-c" style="height: 78%;" data-val="156"></div>
+                                        <div class="bar bar-m" style="height: 60%;" data-val="120"></div>
+                                    </div>
+                                    <span>Mon</span>
+                                </div>
+                                <div class="chart-column">
+                                    <div class="bar-group">
+                                        <div class="bar bar-c" style="height: 92%;" data-val="185"></div>
+                                        <div class="bar bar-m" style="height: 39%;" data-val="78"></div>
+                                    </div>
+                                    <span>Tue</span>
+                                </div>
+                                <div class="chart-column">
+                                    <div class="bar-group">
+                                        <div class="bar bar-c" style="height: 78%;" data-val="157"></div>
+                                        <div class="bar bar-m" style="height: 22%;" data-val="44"></div>
+                                    </div>
+                                    <span>Wed</span>
+                                </div>
+                                <div class="chart-column">
+                                    <div class="bar-group">
+                                        <div class="bar bar-c" style="height: 89%;" data-val="178"></div>
+                                        <div class="bar bar-m" style="height: 54%;" data-val="109"></div>
+                                    </div>
+                                    <span>Thu</span>
+                                </div>
+                                <div class="chart-column">
+                                    <div class="bar-group">
+                                        <div class="bar bar-c" style="height: 92%;" data-val="185"></div>
+                                        <div class="bar bar-m" style="height: 79%;" data-val="159"></div>
+                                    </div>
+                                    <span>Fri</span>
+                                </div>
+                                <div class="chart-column">
+                                    <div class="bar-group">
+                                        <div class="bar bar-c" style="height: 100%;" data-val="200"></div>
+                                        <div class="bar bar-m" style="height: 90%;" data-val="180"></div>
+                                    </div>
+                                    <span>Sat</span>
+                                </div>
+                                <div class="chart-column">
+                                    <div class="bar-group">
+                                        <div class="bar bar-c" style="height: 84%;" data-val="169"></div>
+                                        <div class="bar bar-m" style="height: 17%;" data-val="35"></div>
+                                    </div>
+                                    <span>Sun</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Biểu đồ ngang: User Segmentation -->
+                    <div class="card chart-box">
+                        <div class="card-header">
+                            <h4>User Segmentation by Month</h4>
+                            <div class="legend-top">
+                                <span class="dot student"></span> Student
+                                <span class="dot guest"></span> Guest
+                                <span class="dot lecturer"></span> Lecturer
+                            </div>
+                        </div>
+                        <div class="horizontal-bars-container">
+                            <!-- May -->
+                            <div class="h-row">
+                                <span class="month-label">May</span>
+                                <div class="h-bars">
+                                    <div class="h-bar-wrapper"><div class="h-bar student-bg" style="width: 85%"></div><span>266</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar guest-bg" style="width: 45%"></div><span>117</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar lecturer-bg" style="width: 35%"></div><span>103</span></div>
+                                </div>
+                            </div>
+                            <!-- Apr -->
+                            <div class="h-row">
+                                <span class="month-label">Apr</span>
+                                <div class="h-bars">
+                                    <div class="h-bar-wrapper"><div class="h-bar student-bg" style="width: 55%"></div><span>134</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar guest-bg" style="width: 35%"></div><span>89</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar lecturer-bg" style="width: 75%"></div><span>191</span></div>
+                                </div>
+                            </div>
+                            <!-- Mar -->
+                            <div class="h-row">
+                                <span class="month-label">Mar</span>
+                                <div class="h-bars">
+                                    <div class="h-bar-wrapper"><div class="h-bar student-bg" style="width: 45%"></div><span>121</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar guest-bg" style="width: 65%"></div><span>173</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar lecturer-bg" style="width: 30%"></div><span>84</span></div>
+                                </div>
+                            </div>
+                             <!-- Feb -->
+                             <div class="h-row">
+                                <span class="month-label">Feb</span>
+                                <div class="h-bars">
+                                    <div class="h-bar-wrapper"><div class="h-bar student-bg" style="width: 60%"></div><span>166</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar guest-bg" style="width: 15%"></div><span>31</span></div>
+                                    <div class="h-bar-wrapper"><div class="h-bar lecturer-bg" style="width: 50%"></div><span>146</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GATE STATUS PIE CHARTS -->
+                <div class="gates-status-grid">
+                    <div class="card gate-card">
+                        <h5>GATE A</h5>
+                        <div class="pie-container">
+                            <div class="pie-chart-real" style="--p1: 45.9; --p2: 24.9; --p3: 29.2;">
+                                <span class="label-p p-available">Available<br>45.9%</span>
+                                <span class="label-p p-occupied">Occupied<br>24.9%</span>
+                                <span class="label-p p-reserved">Reserved<br>29.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card gate-card">
+                        <h5>GATE B</h5>
+                        <div class="pie-container">
+                            <div class="pie-chart-real" style="--p1: 45.9; --p2: 24.9; --p3: 29.2;">
+                                <span class="label-p p-available">Available<br>45.9%</span>
+                                <span class="label-p p-occupied">Occupied<br>24.9%</span>
+                                <span class="label-p p-reserved">Reserved<br>29.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card gate-card">
+                        <h5>GATE C</h5>
+                        <div class="pie-container">
+                            <div class="pie-chart-real" style="--p1: 45.9; --p2: 24.9; --p3: 29.2;">
+                                <span class="label-p p-available">Available<br>45.9%</span>
+                                <span class="label-p p-occupied">Occupied<br>24.9%</span>
+                                <span class="label-p p-reserved">Reserved<br>29.2%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices Management - HCMUT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="device-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR (Giữ nguyên từ các trang trước) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://hcmut.edu.vn/img/logo.png" alt="BK Logo" class="logo-img">
+                <span>SYSTEM ADMIN</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="activity-report.html"><i class="fas fa-chart-line"></i> Activity Report</a></li>
+                    <li><a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-microchip"></i> Devices</a></li>
+                    <li><a href="#"><i class="fas fa-id-card"></i> Credentials</a></li>
+                    <li><a href="#"><i class="fas fa-parking"></i> Parking Places</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="page-title">
+                    <h2>Devices Management</h2>
+                    <p>Giám sát tình trạng phần cứng thời gian thực</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-outline"><i class="fas fa-sync"></i> Refresh All</button>
+                    <button class="btn-primary"><i class="fas fa-plus"></i> Add Device</button>
+                </div>
+            </header>
+
+            <section class="content">
+                <!-- DEVICE STATUS CARDS (Screenshot 4) -->
+                <div class="device-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon gray"><i class="fas fa-laptop-medical"></i></div>
+                        <div class="stat-text"><h3>140</h3><p>All Devices</p></div>
+                    </div>
+                    <div class="stat-card border-red">
+                        <div class="stat-icon red"><i class="fas fa-unlink"></i></div>
+                        <div class="stat-text"><h3>30</h3><p>Disconnected</p></div>
+                    </div>
+                    <div class="stat-card border-green">
+                        <div class="stat-icon green"><i class="fas fa-signal"></i></div>
+                        <div class="stat-text"><h3>122</h3><p>Online</p></div>
+                    </div>
+                    <div class="stat-card border-purple">
+                        <div class="stat-icon purple"><i class="fas fa-tools"></i></div>
+                        <div class="stat-text"><h3>140</h3><p>Maintenance</p></div>
+                    </div>
+                </div>
+
+                <div class="device-main-grid">
+                    <!-- LEFT: MAP VIEW (Screenshot 5) -->
+                    <div class="card map-container">
+                        <div class="card-header">
+                            <h4><i class="fas fa-map-marker-alt"></i> Device Location: Parking Lot A</h4>
+                            <div class="map-tools">
+                                <button class="btn-sm"><i class="fas fa-expand"></i> Fullscreen</button>
+                            </div>
+                        </div>
+                        <div class="map-placeholder">
+                            <!-- Giả lập bản đồ với các điểm marker -->
+                            <div class="map-marker marker-1 online"><i class="fas fa-video"></i><span>CAM-01</span></div>
+                            <div class="map-marker marker-2 offline"><i class="fas fa-video"></i><span>CAM-02</span></div>
+                            <div class="map-marker marker-3 online"><i class="fas fa-video"></i><span>CAM-03</span></div>
+                            <div class="gate-label">Gate C (120)</div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: DEVICE LIST (Screenshot 4) -->
+                    <div class="card device-list-box">
+                        <div class="card-header">
+                            <h4>DANH SÁCH CÁC THIẾT BỊ</h4>
+                            <div class="search-box-sm">
+                                <i class="fas fa-search"></i>
+                                <input type="text" placeholder="Tìm ID, tên...">
+                            </div>
+                        </div>
+                        <div class="table-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Device</th>
+                                        <th>Position</th>
+                                        <th>State</th>
+                                        <th>Ping</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td><strong>Camera AI</strong></td>
+                                        <td>Parking A</td>
+                                        <td><span class="status-tag online">Online</span></td>
+                                        <td>15ms</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td><strong>Camera AI</strong></td>
+                                        <td>Parking A</td>
+                                        <td><span class="status-tag offline">Offline</span></td>
+                                        <td>--</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td><strong>Sensor B1</strong></td>
+                                        <td>Parking B</td>
+                                        <td><span class="status-tag online">Online</span></td>
+                                        <td>22ms</td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td><strong>Gateway</strong></td>
+                                        <td>Zone C</td>
+                                        <td><span class="status-tag maintenance">Maint</span></td>
+                                        <td>45ms</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="table-footer">
+                            <button class="btn-text">Xem tất cả 140 thiết bị</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

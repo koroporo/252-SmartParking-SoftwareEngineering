@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Policy Management - HCMUT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fee-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- SIDEBAR (Nhất quán toàn hệ thống) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="https://hcmut.edu.vn/img/logo.png" alt="BK Logo" class="logo-img">
+                <span>SYSTEM ADMIN</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                    <li><a href="activity-report.html"><i class="fas fa-chart-line"></i> Activity Report</a></li>
+                    <li><a href="notifications.html"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="devices.html"><i class="fas fa-microchip"></i> Devices</a></li>
+                    <li><a href="credentials.html"><i class="fas fa-id-card"></i> Credentials</a></li>
+                    <li><a href="parking-places.html"><i class="fas fa-parking"></i> Parking Places</a></li>
+                    <li class="active"><a href="#"><i class="fas fa-file-invoice-dollar"></i> Fee Policy</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <div class="page-title">
+                    <h2>Fee Policy Management</h2>
+                    <p>Thiết lập biểu phí gửi xe cho Sinh viên & Giảng viên</p>
+                </div>
+                <div class="header-actions">
+                    <span class="status-badge live">● Current Active</span>
+                    <button class="btn-primary"><i class="fas fa-save"></i> Save & Apply</button>
+                </div>
+            </header>
+
+            <section class="content">
+                <div class="fee-layout">
+                    <!-- LEFT COLUMN: MAIN FORM -->
+                    <div class="fee-main">
+                        <div class="card">
+                            <div class="card-header"><h4>Thông tin chính sách</h4></div>
+                            <div class="form-group">
+                                <label>Policy Name</label>
+                                <input type="text" value="Semester 2, 2024 - Standard Rate" placeholder="Ví dụ: Học kỳ 2, 2024">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Applicable To</label>
+                                    <select>
+                                        <option>Tất cả đối tượng</option>
+                                        <option>Chỉ Sinh viên</option>
+                                        <option>Chỉ Giảng viên</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Payment Type</label>
+                                    <div class="toggle-group">
+                                        <button class="toggle-btn active">Pay-per-entry</button>
+                                        <button class="toggle-btn">Monthly</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pricing-grid">
+                                <div class="price-input">
+                                    <label><i class="fas fa-motorcycle"></i> Motorcycles</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" value="3000">
+                                        <span>VND</span>
+                                    </div>
+                                </div>
+                                <div class="price-input">
+                                    <label><i class="fas fa-car"></i> Cars</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" value="15000">
+                                        <span>VND</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Description & Terms</label>
+                                <div class="rich-editor">
+                                    <div class="editor-toolbar">
+                                        <i class="fas fa-bold"></i> <i class="fas fa-italic"></i> <i class="fas fa-list"></i> <i class="fas fa-link"></i>
+                                    </div>
+                                    <textarea rows="6" placeholder="Nhập mô tả chi tiết hoặc các điều khoản áp dụng..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Policy Document / Image</label>
+                                <div class="upload-area">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Kéo thả ảnh hoặc <span>Tải lên từ máy tính</span></p>
+                                    <small>Định dạng hỗ trợ: JPG, PNG, PDF (Max 5MB)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN: SIDE SETTINGS -->
+                    <div class="fee-side">
+                        <!-- Visibility Settings -->
+                        <div class="card side-card">
+                            <h4>Cài đặt hiển thị</h4>
+                            <div class="check-item">
+                                <input type="checkbox" id="online" checked>
+                                <label for="online">Hiển thị trên App Sinh viên</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="kiosk" checked>
+                                <label for="kiosk">Hiển thị tại Trạm Kiosk</label>
+                            </div>
+                            <div class="check-item">
+                                <input type="checkbox" id="inventory">
+                                <label for="inventory">Tự động khóa khi bãi đầy</label>
+                            </div>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="card side-card">
+                            <h4>Phân loại & Thẻ</h4>
+                            <div class="form-group">
+                                <label>Category</label>
+                                <div class="tag-input">
+                                    <span class="tag">Nội bộ <i class="fas fa-times"></i></span>
+                                    <span class="tag">Ưu tiên <i class="fas fa-times"></i></span>
+                                    <input type="text" placeholder="Thêm...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action History -->
+                        <div class="card side-card history">
+                            <h4>Lịch sử chỉnh sửa</h4>
+                            <div class="history-item">
+                                <div class="h-dot"></div>
+                                <div class="h-text">
+                                    <strong>Nguyen Van A</strong> cập nhật giá xe máy
+                                    <p>Hôm nay, 08:30</p>
+                                </div>
+                            </div>
+                            <div class="history-item">
+                                <div class="h-dot"></div>
+                                <div class="h-text">
+                                    <strong>System</strong> tự động kích hoạt chính sách
+                                    <p>01/09/2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
