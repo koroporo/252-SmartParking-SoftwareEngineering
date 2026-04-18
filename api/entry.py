@@ -1,33 +1,30 @@
 from fastapi import APIRouter, HTTPException
 from models.request_api import EntryRequest,parking_slots, active_sessions
+from database.memory_db import db
 
 router = APIRouter()
 
 @router.post("/entry")
 async def record_entry(data: EntryRequest):
-    if data.card_id in active_sessions:
+    user = db.get_user_by_rfid(data.card_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="Unknown RFID Tag")
+    
+    if db.is_user_in_session(user.id):
         raise HTTPException(status_code=400, detail="User already inside")
 
-    # Simulate slot assignment
-    assigned_slot = None
-    for slot, status in parking_slots.items():
-        if status == "free":
-            assigned_slot = slot
-            break
-
+    assigned_slot = db.parking.get_first_free_slot()
+    
     if not assigned_slot:
         raise HTTPException(status_code=400, detail="Parking full")
 
-    # Update slot
-    parking_slots[assigned_slot] = "occupied"
-
-    # Create session
-    active_sessions[data.card_id] = {
-        "entry_time": data.timestamp,
-        "slot_id": assigned_slot
-    }
+    db.parking.update_slot_status(assigned_slot.slot_id, status=False)
+    db.create_session(user.id, assigned_slot.slot_id, data.timestamp)
 
     return {
         "status": "granted",
-        "slot_assigned": assigned_slot
+        "user_name": user.full_name,
+        "role": user.role,
+        "slot_assigned": assigned_slot.slot_id,
+        "priority_level": user.get_priority()
     }
